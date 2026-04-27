@@ -1,0 +1,641 @@
+{
+  "meta": {
+    "name": "TruthLens Trusted Sources Reference Database",
+    "version": "1.0.0",
+    "description": "A structured reference database of trusted, credible, and known-unreliable news and information sources. Used by TruthLens to assess source credibility signals when users paste articles or links. Sources are categorized by type, region, topic, and reliability tier.",
+    "created": "2025",
+    "project": "TruthLens — DTI Subject Project · AI & Society",
+    "reliability_tiers": {
+      "TIER_1": "Highly credible — peer-reviewed, government statistics, major wire services with strong editorial standards",
+      "TIER_2": "Generally credible — established news organizations with editorial oversight",
+      "TIER_3": "Mixed credibility — partisan outlets, opinion-heavy sources, requires verification",
+      "TIER_4": "Low credibility — known misinformation, satire (often mislabeled), conspiracy sites",
+      "UNRATED": "Insufficient data to rate"
+    },
+    "total_sources": 80
+  },
+
+  "scientific_and_research": [
+    {
+      "id": "SCI001",
+      "name": "Nature",
+      "url": "https://www.nature.com",
+      "type": "peer_reviewed_journal",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["science", "biology", "physics", "medicine", "environment"],
+      "notes": "One of the world's most prestigious multidisciplinary scientific journals. Rigorous peer review."
+    },
+    {
+      "id": "SCI002",
+      "name": "The Lancet",
+      "url": "https://www.thelancet.com",
+      "type": "peer_reviewed_journal",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["medicine", "public health", "epidemiology"],
+      "notes": "Top-tier medical journal. Note: The 1998 Wakefield autism-vaccine paper was published here but later fully retracted — demonstrates importance of post-publication peer review."
+    },
+    {
+      "id": "SCI003",
+      "name": "Science",
+      "url": "https://www.science.org",
+      "type": "peer_reviewed_journal",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["multidisciplinary science", "environment", "biology", "physics"],
+      "notes": "Published by the American Association for the Advancement of Science. Exceptionally rigorous."
+    },
+    {
+      "id": "SCI004",
+      "name": "PLOS ONE",
+      "url": "https://journals.plos.org/plosone",
+      "type": "peer_reviewed_journal",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["multidisciplinary science"],
+      "notes": "Open-access peer-reviewed journal. Lower barrier to entry than Nature/Science but still peer-reviewed."
+    },
+    {
+      "id": "SCI005",
+      "name": "PubMed / NCBI",
+      "url": "https://pubmed.ncbi.nlm.nih.gov",
+      "type": "research_database",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["medicine", "biology", "public health"],
+      "notes": "Index of biomedical literature maintained by the U.S. National Library of Medicine. Credibility of individual papers varies, but preprint vs published status is clearly labeled."
+    },
+    {
+      "id": "SCI006",
+      "name": "arXiv",
+      "url": "https://arxiv.org",
+      "type": "preprint_server",
+      "reliability_tier": "TIER_2",
+      "bias": "none",
+      "region": "international",
+      "topics": ["physics", "mathematics", "computer science", "AI"],
+      "notes": "Preprint server — papers are NOT peer reviewed. Widely used in physics and CS. Always check if paper has been formally published."
+    }
+  ],
+
+  "international_wire_services": [
+    {
+      "id": "WIRE001",
+      "name": "Reuters",
+      "url": "https://www.reuters.com",
+      "type": "wire_service",
+      "reliability_tier": "TIER_1",
+      "bias": "center",
+      "region": "international",
+      "topics": ["general news", "business", "politics", "science"],
+      "notes": "One of the world's most reliable news wires. Strong fact-checking standards. Reuters Fact Check is a separate dedicated unit."
+    },
+    {
+      "id": "WIRE002",
+      "name": "Associated Press (AP)",
+      "url": "https://apnews.com",
+      "type": "wire_service",
+      "reliability_tier": "TIER_1",
+      "bias": "center",
+      "region": "international",
+      "topics": ["general news", "politics", "business", "science"],
+      "notes": "Not-for-profit wire service. AP Fact Check is a dedicated unit. Very high editorial standards."
+    },
+    {
+      "id": "WIRE003",
+      "name": "Agence France-Presse (AFP)",
+      "url": "https://www.afp.com",
+      "type": "wire_service",
+      "reliability_tier": "TIER_1",
+      "bias": "center",
+      "region": "international",
+      "topics": ["general news", "politics", "environment"],
+      "notes": "Global news agency. AFP Fact Check is highly regarded internationally."
+    },
+    {
+      "id": "WIRE004",
+      "name": "Press Trust of India (PTI)",
+      "url": "https://www.ptinews.com",
+      "type": "wire_service",
+      "reliability_tier": "TIER_1",
+      "bias": "center",
+      "region": "india",
+      "topics": ["india news", "politics", "business"],
+      "notes": "India's primary domestic news wire. Generally reliable for factual news reporting."
+    },
+    {
+      "id": "WIRE005",
+      "name": "ANI (Asian News International)",
+      "url": "https://www.aninews.in",
+      "type": "wire_service",
+      "reliability_tier": "TIER_2",
+      "bias": "slight_center_right",
+      "region": "india",
+      "topics": ["india news", "south asia", "politics"],
+      "notes": "Widely used Indian wire service. Generally factual but has faced criticism for occasionally publishing government press releases without adequate scrutiny."
+    }
+  ],
+
+  "global_news_organizations": [
+    {
+      "id": "GLOBAL001",
+      "name": "BBC News",
+      "url": "https://www.bbc.com/news",
+      "type": "broadcast_and_online",
+      "reliability_tier": "TIER_1",
+      "bias": "center",
+      "region": "international",
+      "topics": ["general news", "politics", "world", "science"],
+      "notes": "Public broadcaster with strong editorial charter and BBC Verify fact-checking unit. One of the world's most trusted sources."
+    },
+    {
+      "id": "GLOBAL002",
+      "name": "The Guardian",
+      "url": "https://www.theguardian.com",
+      "type": "newspaper",
+      "reliability_tier": "TIER_2",
+      "bias": "center_left",
+      "region": "international",
+      "topics": ["general news", "environment", "politics", "culture"],
+      "notes": "High-quality journalism with a liberal-leaning editorial perspective. News section is reliable; opinion section is clearly labeled."
+    },
+    {
+      "id": "GLOBAL003",
+      "name": "The New York Times",
+      "url": "https://www.nytimes.com",
+      "type": "newspaper",
+      "reliability_tier": "TIER_2",
+      "bias": "center_left",
+      "region": "usa",
+      "topics": ["general news", "politics", "business", "science", "culture"],
+      "notes": "High editorial standards. Has faced occasional criticism for specific stories. News and opinion sections clearly differentiated."
+    },
+    {
+      "id": "GLOBAL004",
+      "name": "The Wall Street Journal",
+      "url": "https://www.wsj.com",
+      "type": "newspaper",
+      "reliability_tier": "TIER_2",
+      "bias": "center_right",
+      "region": "usa",
+      "topics": ["business", "finance", "politics", "general news"],
+      "notes": "Highly credible news section. Opinion section has a distinct right-of-center perspective."
+    },
+    {
+      "id": "GLOBAL005",
+      "name": "Al Jazeera English",
+      "url": "https://www.aljazeera.com",
+      "type": "broadcast_and_online",
+      "reliability_tier": "TIER_2",
+      "bias": "center_left",
+      "region": "international",
+      "topics": ["international news", "middle east", "global south"],
+      "notes": "Strong international reporting, particularly in regions underrepresented by Western media. Funded by Qatari government — evaluate geopolitical coverage accordingly."
+    }
+  ],
+
+  "indian_news_organizations": [
+    {
+      "id": "IND001",
+      "name": "The Hindu",
+      "url": "https://www.thehindu.com",
+      "type": "newspaper",
+      "reliability_tier": "TIER_2",
+      "bias": "center_left",
+      "region": "india",
+      "topics": ["india news", "politics", "science", "international"],
+      "notes": "One of India's most respected newspapers. Strong fact-checking culture. English-language."
+    },
+    {
+      "id": "IND002",
+      "name": "The Indian Express",
+      "url": "https://indianexpress.com",
+      "type": "newspaper",
+      "reliability_tier": "TIER_2",
+      "bias": "center",
+      "region": "india",
+      "topics": ["india news", "politics", "business", "science"],
+      "notes": "High editorial standards. Noted for investigative journalism. Has a dedicated Fact Check section."
+    },
+    {
+      "id": "IND003",
+      "name": "Hindustan Times",
+      "url": "https://www.hindustantimes.com",
+      "type": "newspaper",
+      "reliability_tier": "TIER_2",
+      "bias": "center",
+      "region": "india",
+      "topics": ["india news", "politics", "lifestyle", "business"],
+      "notes": "Major English-language daily. Generally reliable for factual reporting."
+    },
+    {
+      "id": "IND004",
+      "name": "NDTV",
+      "url": "https://www.ndtv.com",
+      "type": "broadcast_and_online",
+      "reliability_tier": "TIER_2",
+      "bias": "center",
+      "region": "india",
+      "topics": ["india news", "politics", "business"],
+      "notes": "Established Indian television news channel. Factual reporting standards are generally high."
+    },
+    {
+      "id": "IND005",
+      "name": "The Wire",
+      "url": "https://thewire.in",
+      "type": "digital_native",
+      "reliability_tier": "TIER_2",
+      "bias": "left",
+      "region": "india",
+      "topics": ["politics", "society", "law", "environment"],
+      "notes": "Independent investigative journalism. Left-of-center perspective. Strong on accountability reporting, particularly regarding government. Has had some sourcing controversies."
+    },
+    {
+      "id": "IND006",
+      "name": "Scroll.in",
+      "url": "https://scroll.in",
+      "type": "digital_native",
+      "reliability_tier": "TIER_2",
+      "bias": "center_left",
+      "region": "india",
+      "topics": ["politics", "culture", "technology", "society"],
+      "notes": "Digital news outlet with strong fact-checking culture. Generally reliable."
+    },
+    {
+      "id": "IND007",
+      "name": "Alt News",
+      "url": "https://www.altnews.in",
+      "type": "fact_checker",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "india",
+      "topics": ["fact checking", "misinformation", "india"],
+      "notes": "India's most prominent independent fact-checking organization. IFCN-certified. Specializes in debunking viral misinformation in Indian media."
+    },
+    {
+      "id": "IND008",
+      "name": "Boom Live",
+      "url": "https://www.boomlive.in",
+      "type": "fact_checker",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "india",
+      "topics": ["fact checking", "misinformation", "india"],
+      "notes": "IFCN-certified Indian fact-checker. Covers misinformation in Hindi and English."
+    },
+    {
+      "id": "IND009",
+      "name": "Vishvas News",
+      "url": "https://www.vishvasnews.com",
+      "type": "fact_checker",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "india",
+      "topics": ["fact checking", "misinformation"],
+      "notes": "IFCN-certified multilingual fact-checker covering Hindi, Punjabi, and other Indian languages."
+    }
+  ],
+
+  "fact_checking_organizations": [
+    {
+      "id": "FACT001",
+      "name": "Snopes",
+      "url": "https://www.snopes.com",
+      "type": "fact_checker",
+      "reliability_tier": "TIER_1",
+      "bias": "slight_center_left",
+      "region": "usa",
+      "topics": ["viral claims", "urban legends", "politics", "health"],
+      "notes": "One of the original fact-checking websites. Independently run, IFCN-certified. Strong on viral social media claims."
+    },
+    {
+      "id": "FACT002",
+      "name": "PolitiFact",
+      "url": "https://www.politifact.com",
+      "type": "fact_checker",
+      "reliability_tier": "TIER_1",
+      "bias": "slight_center_left",
+      "region": "usa",
+      "topics": ["politics", "government claims"],
+      "notes": "Pulitzer Prize-winning political fact-checker. Uses 'Truth-O-Meter' scale. IFCN-certified."
+    },
+    {
+      "id": "FACT003",
+      "name": "FactCheck.org",
+      "url": "https://www.factcheck.org",
+      "type": "fact_checker",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "usa",
+      "topics": ["politics", "health", "science"],
+      "notes": "Operated by the Annenberg Public Policy Center. Non-partisan. IFCN-certified."
+    },
+    {
+      "id": "FACT004",
+      "name": "Reuters Fact Check",
+      "url": "https://www.reuters.com/fact-check",
+      "type": "fact_checker",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["general claims", "health", "politics", "social media"],
+      "notes": "Dedicated fact-checking unit within Reuters. IFCN-certified. Strong international coverage."
+    },
+    {
+      "id": "FACT005",
+      "name": "AFP Fact Check",
+      "url": "https://factcheck.afp.com",
+      "type": "fact_checker",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["health", "politics", "science", "social media"],
+      "notes": "AFP's global fact-checking unit. Available in multiple languages. IFCN-certified."
+    },
+    {
+      "id": "FACT006",
+      "name": "WHO Mythbusters",
+      "url": "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters",
+      "type": "official_health_authority",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["health misinformation"],
+      "notes": "WHO's dedicated misinformation debunking page. Primary source for global public health claims."
+    },
+    {
+      "id": "FACT007",
+      "name": "Full Fact (UK)",
+      "url": "https://fullfact.org",
+      "type": "fact_checker",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "uk",
+      "topics": ["uk politics", "health", "economics"],
+      "notes": "UK's leading independent fact-checking charity. IFCN-certified."
+    }
+  ],
+
+  "official_government_and_statistical_sources": [
+    {
+      "id": "GOV001",
+      "name": "Ministry of Statistics and Programme Implementation (MoSPI) — India",
+      "url": "https://mospi.gov.in",
+      "type": "government_statistics",
+      "reliability_tier": "TIER_1",
+      "bias": "official",
+      "region": "india",
+      "topics": ["india economic data", "inflation", "GDP", "employment"],
+      "notes": "Primary source for India's official macroeconomic statistics including CPI, GDP, and employment data."
+    },
+    {
+      "id": "GOV002",
+      "name": "Reserve Bank of India (RBI)",
+      "url": "https://www.rbi.org.in",
+      "type": "central_bank",
+      "reliability_tier": "TIER_1",
+      "bias": "official",
+      "region": "india",
+      "topics": ["monetary policy", "inflation", "banking", "financial system"],
+      "notes": "India's central bank. Primary source for monetary policy decisions, repo rate, and financial system data."
+    },
+    {
+      "id": "GOV003",
+      "name": "Press Information Bureau (PIB) Fact Check",
+      "url": "https://pib.gov.in/factcheck.aspx",
+      "type": "government_fact_checker",
+      "reliability_tier": "TIER_2",
+      "bias": "pro_government",
+      "region": "india",
+      "topics": ["indian government claims", "policy misinformation"],
+      "notes": "Government's own fact-checking unit. Reliable for debunking false claims about government policies, but inherently limited to government-favored framing."
+    },
+    {
+      "id": "GOV004",
+      "name": "NASA",
+      "url": "https://www.nasa.gov",
+      "type": "government_agency",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "usa",
+      "topics": ["space", "climate science", "earth observation"],
+      "notes": "Primary source for US space exploration news and NASA climate data."
+    },
+    {
+      "id": "GOV005",
+      "name": "NOAA (National Oceanic and Atmospheric Administration)",
+      "url": "https://www.noaa.gov",
+      "type": "government_agency",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "usa",
+      "topics": ["climate", "weather", "oceanography"],
+      "notes": "Primary source for US and global climate and weather data."
+    },
+    {
+      "id": "GOV006",
+      "name": "ISRO",
+      "url": "https://www.isro.gov.in",
+      "type": "government_agency",
+      "reliability_tier": "TIER_1",
+      "bias": "official",
+      "region": "india",
+      "topics": ["space", "satellite technology"],
+      "notes": "Indian Space Research Organisation. Primary source for Indian space missions."
+    },
+    {
+      "id": "GOV007",
+      "name": "CDC (Centers for Disease Control and Prevention)",
+      "url": "https://www.cdc.gov",
+      "type": "government_health_agency",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "usa",
+      "topics": ["public health", "disease", "vaccines"],
+      "notes": "Primary US public health authority. Authoritative source on vaccines, disease data, and health guidelines."
+    }
+  ],
+
+  "international_organizations": [
+    {
+      "id": "INTL001",
+      "name": "World Health Organization (WHO)",
+      "url": "https://www.who.int",
+      "type": "intergovernmental_organization",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["global health", "pandemics", "disease", "vaccines"],
+      "notes": "Global health authority. Primary source for international public health data and recommendations."
+    },
+    {
+      "id": "INTL002",
+      "name": "IPCC (Intergovernmental Panel on Climate Change)",
+      "url": "https://www.ipcc.ch",
+      "type": "intergovernmental_organization",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["climate change", "climate science"],
+      "notes": "The gold standard for climate science. Reports synthesize thousands of peer-reviewed studies reviewed by hundreds of scientists."
+    },
+    {
+      "id": "INTL003",
+      "name": "World Economic Forum (WEF)",
+      "url": "https://www.weforum.org",
+      "type": "international_organization",
+      "reliability_tier": "TIER_2",
+      "bias": "slight_center_left",
+      "region": "international",
+      "topics": ["economics", "technology", "future of work", "climate"],
+      "notes": "Produces research reports (e.g., Future of Jobs) that are widely cited. Reports are genuine research but reflect a pro-globalization perspective."
+    },
+    {
+      "id": "INTL004",
+      "name": "World Bank",
+      "url": "https://www.worldbank.org",
+      "type": "intergovernmental_organization",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["global economics", "poverty", "development"],
+      "notes": "Primary source for global poverty, economic development, and development statistics."
+    },
+    {
+      "id": "INTL005",
+      "name": "IRENA (International Renewable Energy Agency)",
+      "url": "https://www.irena.org",
+      "type": "intergovernmental_organization",
+      "reliability_tier": "TIER_1",
+      "bias": "none",
+      "region": "international",
+      "topics": ["renewable energy", "energy statistics"],
+      "notes": "Primary source for global renewable energy capacity data (solar, wind, etc.)."
+    }
+  ],
+
+  "low_credibility_and_known_misinformation_sources": [
+    {
+      "id": "LOW001",
+      "name": "Natural News",
+      "url": "https://www.naturalnews.com",
+      "type": "conspiracy_and_misinformation",
+      "reliability_tier": "TIER_4",
+      "bias": "far_right_conspiracy",
+      "region": "usa",
+      "topics": ["health misinformation", "anti-vaccine", "conspiracy"],
+      "notes": "Repeatedly flagged by fact-checkers for publishing dangerous health misinformation, anti-vaccine content, and conspiracy theories. Banned from Facebook and Google News."
+    },
+    {
+      "id": "LOW002",
+      "name": "InfoWars",
+      "url": "https://www.infowars.com",
+      "type": "conspiracy_and_misinformation",
+      "reliability_tier": "TIER_4",
+      "bias": "far_right_conspiracy",
+      "region": "usa",
+      "topics": ["conspiracy theories", "politics", "health"],
+      "notes": "Operated by Alex Jones. Consistently produces false and harmful misinformation. Multiple platform bans. Owner has faced legal consequences for false claims."
+    },
+    {
+      "id": "LOW003",
+      "name": "The Epoch Times",
+      "url": "https://www.theepochtimes.com",
+      "type": "partisan_with_misinformation",
+      "reliability_tier": "TIER_4",
+      "bias": "far_right",
+      "region": "international",
+      "topics": ["politics", "anti-CCP", "covid misinformation"],
+      "notes": "Linked to Falun Gong. Has published COVID-19 misinformation and was the largest funder of pro-Trump Facebook advertising. Consistently rated as low-credibility by media watchdogs."
+    },
+    {
+      "id": "LOW004",
+      "name": "The Onion",
+      "url": "https://www.theonion.com",
+      "type": "satire",
+      "reliability_tier": "TIER_4",
+      "bias": "satirical_left",
+      "region": "usa",
+      "topics": ["satire", "parody news"],
+      "notes": "Deliberate satire. Labeled as such. However, Onion headlines frequently circulate without the satire label and are mistaken for real news."
+    },
+    {
+      "id": "LOW005",
+      "name": "Fauxy.com (India)",
+      "url": "https://www.fauxy.com",
+      "type": "satire",
+      "reliability_tier": "TIER_4",
+      "bias": "satirical",
+      "region": "india",
+      "topics": ["india satire", "parody news"],
+      "notes": "Indian satirical news site. Similar to The Onion. Frequently mistaken for real news when headlines are shared without context."
+    },
+    {
+      "id": "LOW006",
+      "name": "Postcard News (India)",
+      "url": "https://postcard.news",
+      "type": "misinformation_and_partisan",
+      "reliability_tier": "TIER_4",
+      "bias": "far_right_hindutva",
+      "region": "india",
+      "topics": ["india politics", "communal misinformation"],
+      "notes": "Multiple fact-checking organizations have documented consistent false and communally inflammatory content. Several cases referred to police."
+    },
+    {
+      "id": "LOW007",
+      "name": "OpIndia",
+      "url": "https://www.opindia.com",
+      "type": "partisan_with_misinformation",
+      "reliability_tier": "TIER_3",
+      "bias": "right_wing",
+      "region": "india",
+      "topics": ["india politics", "culture", "current events"],
+      "notes": "Strong right-wing perspective. Mixes genuine news with partisan framing. Fact-checkers have flagged numerous inaccuracies, but not all content is false."
+    },
+    {
+      "id": "LOW008",
+      "name": "WhatsApp Forwards (generic)",
+      "url": null,
+      "type": "social_media_chain_message",
+      "reliability_tier": "TIER_4",
+      "bias": "varies",
+      "region": "india",
+      "topics": ["health hoaxes", "political rumors", "viral claims"],
+      "notes": "WhatsApp forwards are a primary vector for misinformation in India, particularly in regional languages. Should always be independently verified before being trusted or shared."
+    }
+  ],
+
+  "detection_signals_reference": {
+    "description": "Common linguistic and structural signals used by TruthLens to assess credibility. Not definitive on their own — used in combination.",
+    "high_risk_signals": [
+      "ALL CAPS words or excessive exclamation marks",
+      "Anonymous sources ('a source close to...', 'whistleblower reveals...')",
+      "Conspiracy framing ('they don\u2019t want you to know', 'mainstream media is hiding')",
+      "Urgent sharing prompts ('share before they delete this')",
+      "Unverifiable specific statistics ('400% increase', '10,000 cured')",
+      "Suppression narratives ('doctors hate him', 'Big Pharma is hiding')",
+      "Vague authoritative attribution ('experts say', 'scientists confirm' without names)",
+      "Claims that contradict established scientific consensus without peer-reviewed evidence",
+      "No named publication, institution, or author",
+      "Emotionally charged language designed to provoke fear or outrage"
+    ],
+    "positive_credibility_signals": [
+      "Named journalists, researchers, and institutions",
+      "Published in verifiable, peer-reviewed journals",
+      "Cross-verified by multiple independent sources",
+      "Precise statistics with methodology explained",
+      "Conditional and hedged language for uncertain claims",
+      "Links to primary source documents",
+      "Corrections policy visible on source website",
+      "Story corroborated by wire services (Reuters, AP, AFP)",
+      "Author has verifiable professional biography",
+      "Published by IFCN-certified fact-checking organizations"
+    ]
+  }
+}
