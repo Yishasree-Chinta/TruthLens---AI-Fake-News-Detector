@@ -1,0 +1,646 @@
+{
+  "meta": {
+    "name": "TruthLens Labeled News Dataset",
+    "version": "1.0.0",
+    "description": "A curated set of 25 labeled news examples for training, testing, and demonstrating the TruthLens fake news detector. Each entry includes the raw text, ground-truth verdict, confidence level, and annotated signals.",
+    "created": "2025",
+    "project": "TruthLens — DTI Subject Project · AI & Society",
+    "labels": ["REAL", "FAKE", "MIXED", "UNVERIFIABLE"],
+    "categories": ["health", "politics", "science", "technology", "environment", "economics", "social media hoax"],
+    "total_entries": 25
+  },
+  "entries": [
+    {
+      "id": "DS001",
+      "label": "FAKE",
+      "confidence": 97,
+      "category": "health",
+      "topic": "COVID-19 vaccines",
+      "source_type": "social_media_post",
+      "text": "BREAKING: Scientists CONFIRM COVID-19 vaccines contain microchips linked to 5G towers!! Government is using nano-technology to track EVERY vaccinated citizen. Whistleblower reveals shocking truth the mainstream media is HIDING. Share before they take this down! Thousands of people are reporting strange buzzing near injection sites. This is NOT a conspiracy theory — it's REAL and they don't want you to know!",
+      "signals": {
+        "sensationalism": 98,
+        "logical_consistency": 5,
+        "source_quality": 2,
+        "emotional_manipulation": 96,
+        "factual_specificity": 4
+      },
+      "red_flags": [
+        "All-caps language and excessive exclamation marks",
+        "Anonymous 'whistleblower' with no attribution",
+        "Claim contradicts peer-reviewed science",
+        "Urgent sharing prompt ('share before they take this down')",
+        "No named scientists or institutions cited"
+      ],
+      "positive_signals": [],
+      "annotation_notes": "Classic misinformation pattern: unverifiable source, emotional urgency, conspiracy framing. mRNA vaccines contain no microchips — debunked by WHO, CDC, and independent researchers."
+    },
+    {
+      "id": "DS002",
+      "label": "FAKE",
+      "confidence": 95,
+      "category": "technology",
+      "topic": "5G health claims",
+      "source_type": "blog_post",
+      "text": "5G towers are secretly spreading COVID-19 by activating dormant viruses implanted in chemtrails sprayed over major cities since 2018. Telecom companies are paying off health officials to suppress the evidence. Doctors who speak out are being silenced. Multiple countries have started burning 5G towers in protest.",
+      "signals": {
+        "sensationalism": 90,
+        "logical_consistency": 3,
+        "source_quality": 5,
+        "emotional_manipulation": 88,
+        "factual_specificity": 15
+      },
+      "red_flags": [
+        "Combines multiple debunked theories (5G + chemtrails + COVID)",
+        "Unverifiable suppression claims",
+        "No scientific mechanism proposed",
+        "Vague claim about 'multiple countries'"
+      ],
+      "positive_signals": [
+        "Correctly notes tower-burning incidents did occur (though for wrong reasons)"
+      ],
+      "annotation_notes": "5G operates on radio frequency electromagnetic fields, which cannot transmit viruses. Virus transmission requires direct biological contact. WHO confirmed no link."
+    },
+    {
+      "id": "DS003",
+      "label": "FAKE",
+      "confidence": 92,
+      "category": "politics",
+      "topic": "Election fraud",
+      "source_type": "partisan_news_site",
+      "text": "EXCLUSIVE: Leaked documents reveal that thousands of ballots were pre-filled in a warehouse in three swing states before Election Day. Sources close to the investigation say the fraud was orchestrated at the highest levels of government. The mainstream media refuses to cover this story.",
+      "signals": {
+        "sensationalism": 88,
+        "logical_consistency": 12,
+        "source_quality": 8,
+        "emotional_manipulation": 82,
+        "factual_specificity": 20
+      },
+      "red_flags": [
+        "Relies on 'leaked documents' with no verifiable provenance",
+        "Vague 'sources close to the investigation'",
+        "Classic suppression claim ('media refuses to cover')",
+        "No specific names, dates, or verifiable locations"
+      ],
+      "positive_signals": [],
+      "annotation_notes": "Similar claims were reviewed in multiple post-election audits and court cases (60+ cases filed, dismissed for lack of evidence)."
+    },
+    {
+      "id": "DS004",
+      "label": "FAKE",
+      "confidence": 89,
+      "category": "health",
+      "topic": "Alternative medicine",
+      "source_type": "social_media_post",
+      "text": "DOCTORS HATE HIM! A retired biology teacher discovered that drinking bleach diluted in water cures cancer in 72 hours. Big Pharma is spending millions to suppress this $0.50 cure. Over 10,000 people have already been cured but you'll NEVER hear about it on the news.",
+      "signals": {
+        "sensationalism": 95,
+        "logical_consistency": 4,
+        "source_quality": 2,
+        "emotional_manipulation": 90,
+        "factual_specificity": 10
+      },
+      "red_flags": [
+        "Dangerous health misinformation — bleach is toxic",
+        "Clickbait 'doctors hate him' framing",
+        "Conspiracy suppression narrative",
+        "No peer-reviewed evidence cited",
+        "Unverifiable patient count"
+      ],
+      "positive_signals": [],
+      "annotation_notes": "Extremely dangerous. Consuming bleach causes severe chemical burns and can be fatal. This type of content has directly led to hospitalizations."
+    },
+    {
+      "id": "DS005",
+      "label": "FAKE",
+      "confidence": 93,
+      "category": "science",
+      "topic": "Climate change denial",
+      "source_type": "opinion_blog",
+      "text": "The global warming hoax has been EXPOSED: NASA scientists admitted in an internal memo that temperature data has been falsified for 30 years to secure government grants. Real temperatures have actually been declining since 1990. The ice caps are growing, not shrinking. Follow the money — climate change is a $2 trillion industry built on lies.",
+      "signals": {
+        "sensationalism": 85,
+        "logical_consistency": 8,
+        "source_quality": 5,
+        "emotional_manipulation": 80,
+        "factual_specificity": 25
+      },
+      "red_flags": [
+        "References unverifiable 'internal memo'",
+        "Contradicts decades of multi-institution scientific consensus",
+        "Financial conspiracy framing ('follow the money')",
+        "Cherry-picked or fabricated statistics"
+      ],
+      "positive_signals": [],
+      "annotation_notes": "Global temperature records are independently maintained by NASA, NOAA, the UK Met Office, and others — all showing warming trends. Arctic sea ice extent has declined significantly since the 1980s."
+    },
+    {
+      "id": "DS006",
+      "label": "FAKE",
+      "confidence": 88,
+      "category": "social media hoax",
+      "topic": "Celebrity death hoax",
+      "source_type": "satire_site_presented_as_real",
+      "text": "CONFIRMED: [Famous Actor] found dead at home this morning. Family has confirmed the news. Police are investigating. Fans around the world are mourning. The actor had reportedly been battling a secret illness for months.",
+      "signals": {
+        "sensationalism": 80,
+        "logical_consistency": 40,
+        "source_quality": 10,
+        "emotional_manipulation": 75,
+        "factual_specificity": 30
+      },
+      "red_flags": [
+        "No named family spokesperson or police department",
+        "Vague sourcing ('family has confirmed')",
+        "Sensational death claims without official record",
+        "Pattern matches recurring celebrity death hoax format"
+      ],
+      "positive_signals": [],
+      "annotation_notes": "Death hoaxes are a recurring misinformation category. Readers should verify via official statements or reputable wire services (AP, Reuters) before sharing."
+    },
+    {
+      "id": "DS007",
+      "label": "REAL",
+      "confidence": 94,
+      "category": "environment",
+      "topic": "IPCC Climate Report",
+      "source_type": "science_journalism",
+      "text": "The Intergovernmental Panel on Climate Change released its latest assessment report on Monday, concluding that global temperatures have risen by approximately 1.1°C since the pre-industrial era. The 234 scientists who contributed to the report warn that without significant emissions reductions, warming could exceed 1.5°C by the early 2030s. The findings were published in the peer-reviewed journal Nature Climate Change.",
+      "signals": {
+        "sensationalism": 10,
+        "logical_consistency": 92,
+        "source_quality": 98,
+        "emotional_manipulation": 8,
+        "factual_specificity": 95
+      },
+      "red_flags": [],
+      "positive_signals": [
+        "Named, verifiable institution (IPCC)",
+        "Specific contributor count (234 scientists)",
+        "Precise temperature figure with context",
+        "Published in peer-reviewed journal",
+        "Conditional language ('could exceed') rather than alarmism"
+      ],
+      "annotation_notes": "High-quality science journalism. All claims are verifiable, attribution is clear, and language is measured and precise."
+    },
+    {
+      "id": "DS008",
+      "label": "REAL",
+      "confidence": 96,
+      "category": "technology",
+      "topic": "AI regulation",
+      "source_type": "news_wire",
+      "text": "The European Union's AI Act officially came into force this week, marking the world's first comprehensive legal framework for artificial intelligence. The regulation classifies AI systems by risk level and imposes strict requirements on high-risk applications in areas like hiring, credit scoring, and law enforcement. Companies face fines of up to €35 million or 7% of global annual revenue for the most serious violations.",
+      "signals": {
+        "sensationalism": 5,
+        "logical_consistency": 97,
+        "source_quality": 96,
+        "emotional_manipulation": 3,
+        "factual_specificity": 98
+      },
+      "red_flags": [],
+      "positive_signals": [
+        "Specific, verifiable legislation name",
+        "Precise fine amounts cited",
+        "Neutral, factual language",
+        "Covers multiple aspects (scope, classification, penalties)"
+      ],
+      "annotation_notes": "Textbook quality news reporting. Specific, verifiable, and without emotional manipulation."
+    },
+    {
+      "id": "DS009",
+      "label": "REAL",
+      "confidence": 91,
+      "category": "health",
+      "topic": "Medical research",
+      "source_type": "medical_journalism",
+      "text": "A large-scale study published in The Lancet followed 48,000 participants over 12 years and found that people who exercise at least 150 minutes per week have a 35% lower risk of developing type 2 diabetes compared to sedentary individuals. The researchers, based at Johns Hopkins University, controlled for diet, BMI, and genetic risk factors. The findings align with existing WHO physical activity guidelines.",
+      "signals": {
+        "sensationalism": 8,
+        "logical_consistency": 94,
+        "source_quality": 97,
+        "emotional_manipulation": 5,
+        "factual_specificity": 96
+      },
+      "red_flags": [],
+      "positive_signals": [
+        "Published in The Lancet (peer-reviewed)",
+        "Large, specific sample size (48,000)",
+        "Long study duration (12 years)",
+        "Named institution (Johns Hopkins)",
+        "Controlled for confounding variables",
+        "Consistent with existing guidelines"
+      ],
+      "annotation_notes": "Exemplary scientific reporting. Study design details allow for independent verification."
+    },
+    {
+      "id": "DS010",
+      "label": "REAL",
+      "confidence": 90,
+      "category": "economics",
+      "topic": "Inflation data",
+      "source_type": "financial_journalism",
+      "text": "India's retail inflation eased to 4.85% in March, down from 5.09% in February, according to data released by the Ministry of Statistics and Programme Implementation. Food inflation, which accounts for nearly 46% of the consumer price index, fell to 7.68%. Economists polled by Reuters had forecast a reading of 4.91%.",
+      "signals": {
+        "sensationalism": 2,
+        "logical_consistency": 98,
+        "source_quality": 97,
+        "emotional_manipulation": 2,
+        "factual_specificity": 99
+      },
+      "red_flags": [],
+      "positive_signals": [
+        "Specific figures with month-on-month comparison",
+        "Named official government source",
+        "Methodology explained (CPI basket weight)",
+        "Cross-referenced against independent forecasts"
+      ],
+      "annotation_notes": "High factual precision. Government data cited alongside independent analyst benchmarks."
+    },
+    {
+      "id": "DS011",
+      "label": "REAL",
+      "confidence": 89,
+      "category": "science",
+      "topic": "Space exploration",
+      "source_type": "science_journalism",
+      "text": "NASA's Perseverance rover has collected its 23rd rock core sample from the Jezero Crater on Mars, which scientists believe was once an ancient lake bed. The sample, nicknamed 'Lefroy Bay,' contains minerals that form in the presence of water, adding to growing evidence that Mars may have supported microbial life billions of years ago. The samples are expected to be returned to Earth via a future Mars Sample Return mission.",
+      "signals": {
+        "sensationalism": 15,
+        "logical_consistency": 90,
+        "source_quality": 95,
+        "emotional_manipulation": 10,
+        "factual_specificity": 92
+      },
+      "red_flags": [],
+      "positive_signals": [
+        "Named mission and rover",
+        "Specific sample number and location",
+        "Hedged scientific language ('may have supported')",
+        "Named institution (NASA)"
+      ],
+      "annotation_notes": "Good science reporting. Uses appropriately cautious language around unconfirmed hypotheses."
+    },
+    {
+      "id": "DS012",
+      "label": "REAL",
+      "confidence": 88,
+      "category": "politics",
+      "topic": "Legislative update",
+      "source_type": "news_wire",
+      "text": "India's Parliament passed the Digital Personal Data Protection Act, establishing the country's first comprehensive data privacy framework. The law mandates that companies obtain explicit consent before processing personal data and gives citizens the right to request deletion of their information. Tech companies will have 18 months to comply with the new regulations.",
+      "signals": {
+        "sensationalism": 5,
+        "logical_consistency": 95,
+        "source_quality": 94,
+        "emotional_manipulation": 3,
+        "factual_specificity": 92
+      },
+      "red_flags": [],
+      "positive_signals": [
+        "Named legislation",
+        "Specific compliance timeline",
+        "Describes both obligations (companies) and rights (citizens)",
+        "Neutral, factual tone"
+      ],
+      "annotation_notes": "Well-structured factual reporting on verifiable legislative event."
+    },
+    {
+      "id": "DS013",
+      "label": "MIXED",
+      "confidence": 72,
+      "category": "economics",
+      "topic": "Unemployment statistics",
+      "source_type": "partisan_commentary",
+      "text": "The government's latest jobs report shows unemployment at a 50-year low of 3.4%, but experts warn this number is deeply misleading. Millions of discouraged workers have stopped looking for jobs entirely and aren't counted in the official figure. The real unemployment rate, which includes underemployed and discouraged workers, is closer to 7%. Wages have also failed to keep pace with inflation for three consecutive years.",
+      "signals": {
+        "sensationalism": 45,
+        "logical_consistency": 65,
+        "source_quality": 55,
+        "emotional_manipulation": 50,
+        "factual_specificity": 60
+      },
+      "red_flags": [
+        "Vague 'experts warn' without attribution",
+        "Rhetorical framing that selectively presents one metric (U-6 vs U-3)",
+        "Wage claim lacks specific time period sourcing"
+      ],
+      "positive_signals": [
+        "Official unemployment figure is accurate (U-3 rate)",
+        "U-6 'real unemployment' concept is a legitimate economic measure",
+        "Wage stagnation claim has partial basis in real data"
+      ],
+      "annotation_notes": "Contains accurate data but uses selective framing. Both U-3 and U-6 unemployment measures are real official metrics; presenting one as a 'lie' is misleading."
+    },
+    {
+      "id": "DS014",
+      "label": "MIXED",
+      "confidence": 68,
+      "category": "health",
+      "topic": "Nutrition science",
+      "source_type": "health_blog",
+      "text": "Scientists have confirmed that coffee dramatically increases your risk of heart disease. Multiple studies show that consuming more than 2 cups per day raises blood pressure and strains the cardiovascular system. However, other researchers note that moderate coffee consumption may offer protective benefits, including reduced risk of Parkinson's disease and type 2 diabetes.",
+      "signals": {
+        "sensationalism": 55,
+        "logical_consistency": 60,
+        "source_quality": 50,
+        "emotional_manipulation": 40,
+        "factual_specificity": 55
+      },
+      "red_flags": [
+        "Opening overclaims ('dramatically increases') unsupported by scientific consensus",
+        "Vague 'multiple studies' without citation",
+        "Contradicts its own second paragraph"
+      ],
+      "positive_signals": [
+        "Acknowledges competing evidence",
+        "Specific diseases mentioned (Parkinson's, type 2 diabetes) align with real research",
+        "Blood pressure-caffeine link has scientific basis"
+      ],
+      "annotation_notes": "The overall coffee-heart disease consensus is more nuanced — moderate consumption is generally neutral to beneficial. Article mixes legitimate science with exaggerated framing."
+    },
+    {
+      "id": "DS015",
+      "label": "MIXED",
+      "confidence": 65,
+      "category": "technology",
+      "topic": "AI job displacement",
+      "source_type": "opinion_piece",
+      "text": "Artificial intelligence will eliminate 85 million jobs globally by 2025, according to a World Economic Forum report. Factory workers, data entry clerks, and customer service agents face near-certain unemployment as automation accelerates. However, the same report notes that AI is also expected to create 97 million new roles, though critics say these jobs will require skills that displaced workers don't currently have.",
+      "signals": {
+        "sensationalism": 60,
+        "logical_consistency": 70,
+        "source_quality": 75,
+        "emotional_manipulation": 55,
+        "factual_specificity": 72
+      },
+      "red_flags": [
+        "First half omits the 97 million job creation figure (selective framing)",
+        "'Near-certain unemployment' is stronger than source material states",
+        "Date in original WEF report was a projection, not a guarantee"
+      ],
+      "positive_signals": [
+        "WEF report is a real, verifiable source",
+        "Eventually presents both sides of the data",
+        "Job category examples are plausible"
+      ],
+      "annotation_notes": "Real WEF data, but selectively framed in the opening before being corrected. A common pattern of technically-accurate-but-misleading reporting."
+    },
+    {
+      "id": "DS016",
+      "label": "MIXED",
+      "confidence": 63,
+      "category": "environment",
+      "topic": "Renewable energy",
+      "source_type": "industry_news",
+      "text": "Solar energy is now cheaper than coal in 90% of the world, signaling the definitive end of fossil fuels. India added over 15 GW of solar capacity last year, a record high. Yet coal still accounts for 55% of India's electricity generation, and analysts caution that the energy transition will take decades, not years.",
+      "signals": {
+        "sensationalism": 40,
+        "logical_consistency": 75,
+        "source_quality": 78,
+        "emotional_manipulation": 30,
+        "factual_specificity": 80
+      },
+      "red_flags": [
+        "'Definitive end of fossil fuels' overstates what cost data implies",
+        "Solar cheaper than coal in levelized cost ≠ immediate grid replacement"
+      ],
+      "positive_signals": [
+        "Levelized cost parity is real and verifiable (IRENA data)",
+        "India's 15 GW figure aligns with official MNRE data",
+        "Article corrects its own hyperbole in the second half"
+      ],
+      "annotation_notes": "Mostly accurate data with one overstated opening claim. A good example of 'headline vs. reality' discrepancy."
+    },
+    {
+      "id": "DS017",
+      "label": "UNVERIFIABLE",
+      "confidence": 55,
+      "category": "politics",
+      "topic": "Anonymous government claim",
+      "source_type": "anonymous_tip",
+      "text": "According to a senior government official who spoke on condition of anonymity, the administration is secretly planning to introduce a 15% wealth tax on assets above ₹10 crore. The proposal is still in early discussion stages and has not been confirmed by the Finance Ministry.",
+      "signals": {
+        "sensationalism": 30,
+        "logical_consistency": 60,
+        "source_quality": 20,
+        "emotional_manipulation": 25,
+        "factual_specificity": 50
+      },
+      "red_flags": [
+        "Sole anonymous source with no secondary confirmation",
+        "No official corroboration"
+      ],
+      "positive_signals": [
+        "Article itself acknowledges the claim is unconfirmed",
+        "Specific enough detail (asset threshold) to suggest insider knowledge",
+        "No sensationalist language"
+      ],
+      "annotation_notes": "Unverifiable but responsibly hedged. Anonymously-sourced policy leaks are common in political journalism and aren't inherently false — just unconfirmed."
+    },
+    {
+      "id": "DS018",
+      "label": "UNVERIFIABLE",
+      "confidence": 50,
+      "category": "social media hoax",
+      "topic": "Viral social media claim",
+      "source_type": "social_media_post",
+      "text": "A video is circulating showing what appears to be a UFO hovering over Mumbai's Bandra-Worli Sea Link for approximately 3 minutes before disappearing. Thousands of people claim to have witnessed it. No official statement has been issued by the Indian Air Force or ISRO.",
+      "signals": {
+        "sensationalism": 60,
+        "logical_consistency": 45,
+        "source_quality": 15,
+        "emotional_manipulation": 50,
+        "factual_specificity": 40
+      },
+      "red_flags": [
+        "Unverified video evidence easily fabricated with basic software",
+        "No official investigation cited",
+        "Vague 'thousands of witnesses' claim"
+      ],
+      "positive_signals": [
+        "Does not make definitive claims about extraterrestrial origin",
+        "Notes absence of official statement rather than claiming suppression"
+      ],
+      "annotation_notes": "Cannot be verified without the original video and metadata analysis. UFO (Unidentified Aerial Phenomena) reports are real but highly prone to misidentification."
+    },
+    {
+      "id": "DS019",
+      "label": "FAKE",
+      "confidence": 96,
+      "category": "health",
+      "topic": "Vaccine misinformation",
+      "source_type": "anti-vax_website",
+      "text": "URGENT WARNING: The new mRNA flu vaccine permanently alters your DNA and can be transmitted to unvaccinated people through skin contact. Children who receive this vaccine show a 400% increase in autism diagnoses. This has been documented in a study conducted by a team of independent scientists.",
+      "signals": {
+        "sensationalism": 94,
+        "logical_consistency": 3,
+        "source_quality": 2,
+        "emotional_manipulation": 92,
+        "factual_specificity": 12
+      },
+      "red_flags": [
+        "mRNA does not alter DNA — basic molecular biology refutes this",
+        "Vaccines cannot be 'transmitted through skin contact'",
+        "Autism-vaccine link is a thoroughly debunked claim",
+        "Unverifiable '400% increase' statistic",
+        "Vague 'team of independent scientists' with no names or journal"
+      ],
+      "positive_signals": [],
+      "annotation_notes": "Dangerous health misinformation. The autism-vaccine claim originates from a 1998 study that was fully retracted and whose author lost his medical license."
+    },
+    {
+      "id": "DS020",
+      "label": "FAKE",
+      "confidence": 90,
+      "category": "politics",
+      "topic": "Historical revisionism",
+      "source_type": "nationalist_website",
+      "text": "Historians have now confirmed that World War II was started by Britain and France, not Germany, because of their deliberate economic strangulation of Germany after World War I. The Versailles Treaty was designed to make war inevitable. Hitler's actions were purely defensive.",
+      "signals": {
+        "sensationalism": 70,
+        "logical_consistency": 15,
+        "source_quality": 8,
+        "emotional_manipulation": 65,
+        "factual_specificity": 35
+      },
+      "red_flags": [
+        "Reverses established historical consensus with no new evidence",
+        "Vague 'historians have confirmed' without citation",
+        "Partially valid premise (Versailles Treaty grievances) used to justify false conclusion",
+        "Apologist framing for war crimes"
+      ],
+      "positive_signals": [
+        "Versailles Treaty did create genuine economic hardship — this is historically documented"
+      ],
+      "annotation_notes": "Classic historical revisionism technique: use a kernel of truth (Versailles harshness) to support a false and harmful conclusion. No mainstream historian supports this framing."
+    },
+    {
+      "id": "DS021",
+      "label": "REAL",
+      "confidence": 93,
+      "category": "technology",
+      "topic": "Cybersecurity",
+      "source_type": "tech_journalism",
+      "text": "A critical vulnerability in the OpenSSL cryptographic library, tracked as CVE-2023-0286, has been patched in version 3.0.8. The flaw could allow a remote attacker to trigger a denial-of-service condition or potentially read sensitive memory contents. System administrators are advised to update immediately. The issue was independently discovered by researchers at Google and Akamai.",
+      "signals": {
+        "sensationalism": 15,
+        "logical_consistency": 96,
+        "source_quality": 95,
+        "emotional_manipulation": 8,
+        "factual_specificity": 97
+      },
+      "red_flags": [],
+      "positive_signals": [
+        "Specific CVE tracking number (independently verifiable)",
+        "Exact version numbers cited",
+        "Named independent discovery teams",
+        "Clear, actionable guidance for readers"
+      ],
+      "annotation_notes": "Highly credible security reporting. CVE identifiers allow full independent verification."
+    },
+    {
+      "id": "DS022",
+      "label": "REAL",
+      "confidence": 91,
+      "category": "environment",
+      "topic": "Biodiversity",
+      "source_type": "science_journalism",
+      "text": "A new study published in Science estimates that Earth has lost approximately 69% of monitored wildlife populations since 1970, based on data tracking 32,000 species across 838 studies. Freshwater species have seen the steepest declines, with populations falling by 83% on average. The lead author, Dr. Marco Lambertini of WWF International, called it 'a catastrophic decline driven by human activity.'",
+      "signals": {
+        "sensationalism": 20,
+        "logical_consistency": 92,
+        "source_quality": 97,
+        "emotional_manipulation": 18,
+        "factual_specificity": 96
+      },
+      "red_flags": [],
+      "positive_signals": [
+        "Published in Science (top-tier peer-reviewed journal)",
+        "Precise methodology described (32,000 species, 838 studies)",
+        "Named lead researcher and institution",
+        "Direct quote from source with attribution"
+      ],
+      "annotation_notes": "This refers to the WWF Living Planet Report. All figures are independently verifiable."
+    },
+    {
+      "id": "DS023",
+      "label": "FAKE",
+      "confidence": 91,
+      "category": "technology",
+      "topic": "Tech company rumor",
+      "source_type": "rumor_site",
+      "text": "LEAKED: Apple is secretly testing an iPhone with a folding screen, a built-in satellite internet antenna, and a neural interface that reads your thoughts to type messages. The device will launch in 2024 and cost $3,000. Our source is a factory worker in Zhengzhou who saw the schematics.",
+      "signals": {
+        "sensationalism": 82,
+        "logical_consistency": 30,
+        "source_quality": 10,
+        "emotional_manipulation": 60,
+        "factual_specificity": 40
+      },
+      "red_flags": [
+        "Single anonymous source ('factory worker')",
+        "Stacks multiple speculative features without precedent",
+        "Neural thought-reading technology does not exist at consumer level",
+        "No corroborating sources"
+      ],
+      "positive_signals": [
+        "Foldable phone technology is real and in development",
+        "Satellite connectivity is plausible (Apple added emergency satellite SOS)"
+      ],
+      "annotation_notes": "Mixes plausible near-future technology (foldable, satellite) with impossible current technology (thought-reading) around an unverifiable single source."
+    },
+    {
+      "id": "DS024",
+      "label": "REAL",
+      "confidence": 95,
+      "category": "economics",
+      "topic": "Central bank policy",
+      "source_type": "financial_journalism",
+      "text": "The Reserve Bank of India kept its benchmark repo rate unchanged at 6.5% for the sixth consecutive policy meeting, as the six-member Monetary Policy Committee voted 5-1 in favor of holding rates. RBI Governor Shaktikanta Das said the central bank remains focused on withdrawing its accommodative stance to ensure inflation durably aligns with the 4% target.",
+      "signals": {
+        "sensationalism": 3,
+        "logical_consistency": 98,
+        "source_quality": 99,
+        "emotional_manipulation": 2,
+        "factual_specificity": 99
+      },
+      "red_flags": [],
+      "positive_signals": [
+        "Named institution (RBI) and policy body (MPC)",
+        "Exact rate figure and consecutive meeting count",
+        "Vote breakdown (5-1) is verifiable",
+        "Named Governor with direct quote",
+        "Consistent with official RBI press releases"
+      ],
+      "annotation_notes": "Near-perfect factual reporting. Every claim is independently verifiable via the RBI's official MPC resolution documents."
+    },
+    {
+      "id": "DS025",
+      "label": "MIXED",
+      "confidence": 70,
+      "category": "social media hoax",
+      "topic": "Viral health tip",
+      "source_type": "whatsapp_forward",
+      "text": "Drinking warm lemon water every morning on an empty stomach boosts your immune system by 300%, flushes toxins from your liver, and can help reverse early-stage diabetes. Doctors don't recommend this because pharmaceutical companies don't want people to rely on natural cures.",
+      "signals": {
+        "sensationalism": 70,
+        "logical_consistency": 30,
+        "source_quality": 5,
+        "emotional_manipulation": 72,
+        "factual_specificity": 20
+      },
+      "red_flags": [
+        "Specific '300% immune boost' figure is fabricated",
+        "Liver 'detox' claims are not supported by hepatology research",
+        "Diabetes reversal claim is dangerous and unsupported",
+        "Standard anti-pharma conspiracy framing"
+      ],
+      "positive_signals": [
+        "Lemon water does contain Vitamin C (a real immune nutrient)",
+        "Morning hydration does have general health benefits"
+      ],
+      "annotation_notes": "Common wellness misinformation pattern. The kernel of truth (Vitamin C, hydration) is used to support dramatically exaggerated and potentially dangerous medical claims."
+    }
+  ]
+}
